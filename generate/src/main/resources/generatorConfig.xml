@@ -27,7 +27,7 @@
         <javaClientGenerator type="XMLMAPPER" targetPackage="com.test.mybatis.mapper" targetProject="D:\works\work3\mybatis\generate\src\main\java">
             <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>
-        <table schema="test" tableName="user" domainObjectName="User">
+        <table schema="test" tableName="posts" domainObjectName="Post">
             <property name="useActualColumnNames" value="false"/>
         </table>
     </context>

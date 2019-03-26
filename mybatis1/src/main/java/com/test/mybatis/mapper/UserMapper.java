@@ -15,6 +15,7 @@ public interface UserMapper {
     int deleteByPrimaryKey(String id);
 
     int insert(User record);
+    int insertBatch(List list);
 
     int insertSelective(User record);
 
@@ -30,6 +31,9 @@ public interface UserMapper {
 
     int updateByPrimaryKey(User record);
 
-    @Select("select * from user where id='1'")
+    //@Select("select * from user where id='1'")
     User getMyUser();
+    @Select("select * from user ")
+    List<User> selectUserByPage();
+
 }

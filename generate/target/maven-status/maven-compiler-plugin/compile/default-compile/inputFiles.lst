@@ -1,4 +1,10 @@
-D:\works\work3\mybatis\generate\src\main\java\com\test\mybatis\mapper\UserMapper.java
-D:\works\work3\mybatis\generate\src\main\java\com\test\mybatis\beans\User.java
+D:\works\work3\mybatis\generate\src\main\java\com\test\mybatis\beans\Teacher.java
+D:\works\work3\mybatis\generate\src\main\java\com\test\mybatis\beans\BlogExample.java
+D:\works\work3\mybatis\generate\src\main\java\com\test\mybatis\beans\Post.java
+D:\works\work3\mybatis\generate\src\main\java\com\test\mybatis\beans\Blog.java
+D:\works\work3\mybatis\generate\src\main\java\com\test\mybatis\mapper\BlogMapper.java
+D:\works\work3\mybatis\generate\src\main\java\com\test\mybatis\beans\TeacherExample.java
+D:\works\work3\mybatis\generate\src\main\java\com\test\mybatis\mapper\PostMapper.java
+D:\works\work3\mybatis\generate\src\main\java\com\test\mybatis\beans\PostExample.java
 D:\works\work3\mybatis\generate\src\main\java\com\test\App.java
-D:\works\work3\mybatis\generate\src\main\java\com\test\mybatis\beans\UserExample.java
+D:\works\work3\mybatis\generate\src\main\java\com\test\mybatis\mapper\TeacherMapper.java

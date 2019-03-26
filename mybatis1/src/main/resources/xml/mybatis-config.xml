@@ -3,25 +3,41 @@
         PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
-    <!--type Handler 配置-->
-    <typeHandlers>
-        <!--
-          当配置package的时候，mybatis会去配置的package扫描TypeHandler
-          <package name="com.dy.demo"/>
-       -->
-        <!-- handler属性直接配置我们要指定的TypeHandler -->
-        <typeHandler handler=""/>
-        <!-- javaType 配置java类型，例如String, 如果配上javaType, 那么指定的typeHandler就只作用于指定的类型 -->
-        <typeHandler javaType="" handler=""/>
-        <!-- jdbcType 配置数据库基本数据类型，例如varchar, 如果配上jdbcType, 那么指定的typeHandler就只作用于指定的类型  -->
-        <typeHandler jdbcType="" handler=""/>
-        <!-- 也可两者都配置 -->
-        <typeHandler javaType="" jdbcType="" handler=""/>
-    </typeHandlers>
+   
+    <!--<typeHandlers>
+        type Handler 配置-->
+            <!--
+              当配置package的时候，mybatis会去配置的package扫描TypeHandler
+              <package name="com.dy.demo"/>
+           -->
+            <!-- handler属性直接配置我们要指定的TypeHandler
+            <typeHandler handler="com.test.MyTypeHandler"/>-->
+            <!-- javaType 配置java类型，例如String, 如果配上javaType, 那么指定的typeHandler就只作用于指定的类型
+            <typeHandler javaType="" handler=""/>-->
+            <!-- jdbcType 配置数据库基本数据类型，例如varchar, 如果配上jdbcType, 那么指定的typeHandler就只作用于指定的类型
+            <typeHandler jdbcType="" handler=""/> -->
+            <!-- 也可两者都配置
+            <typeHandler javaType="" jdbcType="" handler=""/>
+    </typeHandlers>-->
     <settings>
         <setting name="logImpl" value="SLF4J"/>
+        <!--延迟加载的全局开关。当开启时，所有关联对象都会延迟加载。 特定关联关系中可通过设置fetchType属性来覆盖该项的开关状态。-->
+        <setting name="lazyLoadingEnabled" value="true"/>
+        <setting name="cacheEnabled" value="true"/>  <!-- 开启二级缓存-->
+        <!--是层级延迟加载开关，就是处于同一个层级的关联表会同时延迟加载，或者同时被加载。-->
+        <setting name="aggressiveLazyLoading" value="false"/>
         <!--<setting name="cacheEnabled" value="true" />-->
     </settings>
+   <typeAliases>
+        <package name="com.test.mybatis.beans"/>
+    </typeAliases> <!---->
+    <plugins>
+        <!--<plugin interceptor="com.test.plugin.LogPlugin" >
+            <property name="logName" value="testPro"/>
+        </plugin>-->
+        <plugin interceptor="com.test.plugin.ThreadLocalPagePlugin" >
+        </plugin>
+    </plugins>
     <environments default="development">
         <environment id="development">
             <transactionManager type="JDBC"/>
@@ -33,9 +49,13 @@
             </dataSource>
         </environment>
     </environments>
+   
     <mappers>
         <!--<mapper resource="xml/TestMapper.xml"/>
         <mapper resource="xml/PostsMapper.xml"/>-->
         <mapper resource="xml/UserMapper.xml"/>
+        <mapper resource="xml/TeacherMapper.xml"/>
+        <mapper resource="xml/PostMapper.xml"/>
+        <mapper resource="xml/BlogMapper.xml"/>
     </mappers>
 </configuration>
